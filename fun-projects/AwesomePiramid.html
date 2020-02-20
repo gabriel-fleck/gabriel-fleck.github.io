@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+ <html>
+    <head>
+        <title>Piramide Irada!</title>
+    </head>
+<body>
+
+<h3> Pirâmide Irada! </h3>
+<p> Qual o tamanho da Pirâmide Irada? </p>
+<input id="input" type="text" name="1" value="">
+<p> Clique no botao abaixo para gerar uma pirâmide irada! </p>
+<button onclick="MakePiramid()">Gerar Pirâmide!</button>
+
+<!-- Paragrafo de saida do codigo JavaScript -->
+<p id="output"></p>
+
+<script>
+
+    //Tipos de variaveis
+    var falseOrTrue = true;
+    var integer = 5;
+    var randomNumber = 2.5;
+    var randomText = "";
+
+    //Valor do elemento de id "output"
+    document.getElementById("output").innerHTML = "Esperando Pirâmide Louca...";
+    
+    function MakePiramid() {
+        //integer recebe o valor de "input"
+        integer = parseInt(document.getElementById("input").value, 10);
+        randomText = ""
+        //Row
+        for (i = 1; i < integer + 1; i++) {
+            //Column
+            for (j = 1; j < i; j++) {
+                randomText = randomText + j + " ";
+            }
+            randomText = randomText + "<br>";
+        }
+        //Row
+        for (i = integer + 1; i > 1; i--) {
+            //Column
+            for (j = 1; j < i; j++) {
+                randomText = randomText + j + " ";
+            }
+            randomText = randomText + "<br>";
+        }
+
+        randomText = randomText + "<br>" + "<br>" + "Pirâmide Irada Gerada!";
+        document.getElementById("output").innerHTML = randomText;//Refresh HTML
+    }
+
+</script>
+
+</body>
+</html> 
