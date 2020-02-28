@@ -13,6 +13,9 @@ lu {
 li {
 	color: white;
 }
+hr {
+	width: 300px;
+}
 .center-div {
 	
 }
@@ -20,10 +23,36 @@ li {
 	height: 150px;
 }
 .small-button {
+	box-shadow:inset 0px 1px 0px 0px #9acc85;
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background-color:#74ad5a;
+	border:2px solid #3b6e22;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:15px 0px;
+	text-decoration:none;
+
 	width: 50px;
 	height: 50px;
 }
 .normal-button {
-	width: 100px;
-	height: 50px;
+	box-shadow:inset 0px 1px 0px 0px #cc8686;
+	background:linear-gradient(to bottom, #ab5b5b 5%, #990000 100%);
+	background-color:#ab5b5b;
+	border:2px solid #6e2222;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:0px 0px;
+	text-decoration:none;
+
+	width: 170px;
+	height: 45px;
+
+
 }
