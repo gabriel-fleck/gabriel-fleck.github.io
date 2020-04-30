@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Numbers To Colors</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+    <div align="center">
+        
+        <h1>Famous Numbers To Colors</h1>
+        <p id="info"></p>
+        <br>
+        <p> You can set the Width and Height of the Quads to get nice variations! </p>
+        <p>Width: <input id="width" type="number" value="50" min="10" max="500"></p>
+        <p>Height: <input id="height" type="number" value="50" min="10" max="500"></p>
+
+        <button onclick="DrawQuads()">Generate!</button>
+        <p id="quadCount"></p>
+        <br>
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+        <hr>
+
+    </div>
+
+<script src="number-to-colors.js"></script>
+
+
+</body>
+</html>
