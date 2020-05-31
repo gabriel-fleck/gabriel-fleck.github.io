@@ -14,18 +14,35 @@
     <div align="center">
         
         <h1>Famous Numbers To Colors</h1>
-        <p id="info"></p>
-        <br>
-        <p> You can set the Width and Height of the Quads to get nice variations! </p>
-        <p>Width: <input id="width" type="number" value="50" min="10" max="500"></p>
-        <p>Height: <input id="height" type="number" value="50" min="10" max="500"></p>
-
-        <button onclick="DrawQuads()">Generate!</button>
-        <p id="quadCount"></p>
-        <br>
-        <canvas id="myCanvas" width="500" height="500"></canvas>
+        <p>The colors represent a famous number using a RGB system, 9 is full color and 0 is without color.</p>
+        <p>Like the PI (π) Number sequence 31415..., the first quad have the colors '3,1,4', the second quad is '1,4,1', third is '4,1,5' and so on.</p>
+        <p>Prime numbers sequence 235711... starts with a quad color '2,3,5', the second quad is '3,5,7', third is '5,7,1' and so on.</p>
         <hr>
 
+        <p> You can set the Width and Height of the Quads to get nice variations! (Maximum of 500x500)</p>
+        <p>Width: <input id="width" type="number" value="50" min="10" max="500"> Height: <input id="height" type="number" value="50" min="10" max="500"></p>
+
+        <button onclick="DrawPI()"> Draw PI </button>
+        <button onclick="DrawPrimes()"> Draw Prime Numbers </button>
+        <button onclick="DrawPowerOfTwo()"> Draw Power Of Two </button>
+        <button onclick="DrawFibonacci()"> Draw Fibonacci </button>
+
+        <p> You can also throw a custom sequence! (try to past only numbers, without spaces or line breaks)</p>
+        <input id="custom" type="text" value="123456789101112131415">
+        <button onclick="DrawCustom()"> Draw Custom Sequence </button>
+        <br>
+        
+        <br>
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+        <p id="quadCount"></p>
+        <hr>
+        
+        <br>
+        
+        <p> Wanna find more sequences? Maybe you can get on this awesome website here:  </p>
+        <p> <a href="http://oeis.org/">The On-Line Encyclopedia of Integer Sequences</a> </p>
+        <p> HAVE FUN! </p>
+        <br>
     </div>
 
 <script src="number-to-colors.js"></script>
