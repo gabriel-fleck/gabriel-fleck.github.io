@@ -1,5 +1,4 @@
-import Vector2 from './Vector2.js';
-import Color from './Color.js';
+
 
 class GameObject {
 
@@ -17,7 +16,7 @@ class GameObject {
 
       this.drawLayer = 0;
 
-      this.isKinematic = false;
+      this.isKinematic = true;
 
       this.color = new Color(0, 0, 255, 1);
       //this.ctx = canvas.getContext("2d");
@@ -26,7 +25,7 @@ class GameObject {
       console.log("GameObject Instantiated: " + this.tag)
 
       this.collider = this.size;
-      this.bounce = 0.3;
+      this.bounce = 0;
 
       this.Draw();
     }
@@ -58,4 +57,3 @@ class GameObject {
 
   }
 
-export default GameObject
