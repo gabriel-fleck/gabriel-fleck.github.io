@@ -7,7 +7,7 @@ class GameObject {
       this.canvas = canvas;
       this.ctx = ctx;
       this.position = new Vector2(0, 0);
-      this.speed = 0.5;
+      this.speed = 2;
       this.stopSpeedConst = 0.9;
       this.velocity = new Vector2(0, 0);
 

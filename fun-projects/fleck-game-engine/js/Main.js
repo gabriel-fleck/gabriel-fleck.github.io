@@ -55,7 +55,7 @@ gameObjects[4] = movingBox;
 let left = false;
 let right = false;
 
-let colliderC = 0;
+let colliderC = 0.5;
 
 
 
@@ -90,6 +90,7 @@ function Update ()
 Update();
 
 
+
 function Collision() {
 
     for (let i = 0; i < gameObjects.length; i++) 
@@ -118,7 +119,7 @@ function Collision() {
                     
                     //var distanceX = (Math.abs(gameObjects[i].velocity.x) + Math.abs(gameObjects[j].velocity.x)) / distanceX;
                     let checkY = (Math.abs(gameObjects[i].velocity.y) + Math.abs(gameObjects[j].velocity.y)) / distanceY;
-                    if (distanceX <= colliderC && distanceY <= colliderC) 
+                    /*if (distanceX <= colliderC && distanceY <= colliderC) 
                     {
                         if (distanceY <= colliderC && distanceX <= colliderDistanceX) 
                         {
@@ -174,7 +175,23 @@ function Collision() {
                         //console.log("Distancia: " + player.position.y);
                         //console.log("Distancia: " + platform.position.y);
                         
-                   }
+                   }*/
+
+                   //COLLISION
+                   if (distanceY <= colliderC && distanceX <= colliderC)
+                    {
+                        if (distanceX > distanceY)
+                        {
+                            gameObjects[i].position.x -= gameObjects[i].velocity.x;
+                            gameObjects[i].velocity.x = -gameObjects[i].velocity.x * 0;
+                        }
+                        else
+                        {
+                            gameObjects[i].position.y -= gameObjects[i].velocity.y;
+                            gameObjects[i].velocity.y = -gameObjects[i].velocity.y * 0;
+                        }
+                    }
+
                 }
             }
         
@@ -183,6 +200,7 @@ function Collision() {
     }
 
 }
+
 
 function keyUp(e) 
 {

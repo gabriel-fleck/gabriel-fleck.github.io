@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Fun Projects List</title>
+		
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+
+
+	<body>
+		
+		<div align="center">
+			<h1>Hoje é sexta Feira ?</h1>
+
+			
+			<p id=isitfriday> test </p>
+
+			
+			
+			<hr>
+		
+		</div>
+		
+
+		<script type="text/javascript">
+			function isitfriday() {
+				let day = new Date();
+				let friday = 'Não';
+				if (day.getDay() == 5) {
+					friday = 'SIM!';
+				}
+
+			  	document.getElementById('isitfriday').innerHTML = friday;
+			}
+			isitfriday();
+			</script>
+		
+	</body>
+</html>
