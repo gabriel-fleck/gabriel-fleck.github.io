@@ -54,6 +54,7 @@ gameObjects[4] = movingBox;
 
 let left = false;
 let right = false;
+let isGrounded = true;
 
 let colliderC = 0.5;
 
@@ -104,9 +105,6 @@ function Collision() {
 
                 if (!gameObjects[i].isKinematic) 
                 {
-
-                    //player.position = new Vector2(0, 5);
-                    //player.velocity.y = 0;
                     
                     let colliderDistanceX = (gameObjects[i].collider.x * 0.5 + gameObjects[j].collider.x * 0.5);
                     let colliderDistanceY = (gameObjects[i].collider.y * 0.5 + gameObjects[j].collider.y * 0.5);
@@ -117,65 +115,9 @@ function Collision() {
                     let myPosition = new Vector2(gameObjects[i].position.x, gameObjects[i].position.y);
                     let myVelocity = new Vector2(gameObjects[i].velocity.x, gameObjects[i].velocity.y);
                     
-                    //var distanceX = (Math.abs(gameObjects[i].velocity.x) + Math.abs(gameObjects[j].velocity.x)) / distanceX;
+
                     let checkY = (Math.abs(gameObjects[i].velocity.y) + Math.abs(gameObjects[j].velocity.y)) / distanceY;
-                    /*if (distanceX <= colliderC && distanceY <= colliderC) 
-                    {
-                        if (distanceY <= colliderC && distanceX <= colliderDistanceX) 
-                        {
-                            gameObjects[i].position.y -= gameObjects[i].velocity.y;
-                            gameObjects[i].velocity.y = -gameObjects[i].velocity.y * gameObjects[i].bounce;
-                            //console.log("Distancia: " + distanceY);
-                        }
-                        
-                        
-                        else if (distanceX <= colliderC && distanceY <= colliderDistanceY) 
-                        {
-                            if (gameObjects[i].position.x > gameObjects[j].position.x)
-                            {
-                                if (gameObjects[i].velocity.x < 0) 
-                                {
-                                    if (distanceY <= colliderC) 
-                                    {
-                                        gameObjects[i].position.x -= gameObjects[i].velocity.x;
-                                        gameObjects[i].velocity.x = -gameObjects[i].velocity.x + gameObjects[j].velocity.x * gameObjects[i].bounce * gameObjects[j].bounce;
-                                        //console.log("Sou o : " + gameObjects[i].tag);
-
-                                        if (!gameObjects[j].isKinematic)
-                                        {
-                                            gameObjects[j].position.x -= gameObjects[j].velocity.x;
-                                            gameObjects[j].velocity.x = -gameObjects[j].velocity.x + myVelocity.x * gameObjects[i].bounce * gameObjects[j].bounce;
-                                        }
-                                    }
-                                    
-                                }
-                            }
-                            else if (gameObjects[i].position.x < gameObjects[j].position.x){
-                                if (gameObjects[i].velocity.x > 0) 
-                                {
-                                    if (distanceY <= colliderC) 
-                                    {
-                                        gameObjects[i].position.x -= gameObjects[i].velocity.x;
-                                        gameObjects[i].velocity.x = -gameObjects[i].velocity.x + gameObjects[j].velocity.x * gameObjects[i].bounce * gameObjects[j].bounce;
-                                        //console.log("Sou o : " + gameObjects[i].tag);
-
-                                        if (!gameObjects[j].isKinematic)
-                                        {
-                                            gameObjects[j].position.x -= gameObjects[j].velocity.x;
-                                            gameObjects[j].velocity.x = -gameObjects[j].velocity.x + myVelocity.x * gameObjects[i].bounce * gameObjects[j].bounce;
-                                        }
-                                    }
-                                }
-                            }
-                            //console.log("ColidiuX");
-                            
-                        }
-                        
-                        //console.log("Distancia: " + distanceY);
-                        //console.log("Distancia: " + player.position.y);
-                        //console.log("Distancia: " + platform.position.y);
-                        
-                   }*/
+                    
 
                    //COLLISION
                    if (distanceY <= colliderC && distanceX <= colliderC)
@@ -189,6 +131,12 @@ function Collision() {
                         {
                             gameObjects[i].position.y -= gameObjects[i].velocity.y;
                             gameObjects[i].velocity.y = -gameObjects[i].velocity.y * 0;
+                            if (gameObjects[i].tag == "Player")
+                            {
+                                if (gameObjects[i].position.y > gameObjects[j].position.y) {
+                                    isGrounded = true;
+                                }
+                            }
                         }
                     }
 
@@ -204,9 +152,10 @@ function Collision() {
 
 function keyUp(e) 
 {
-    if(e.key == "ArrowUp") 
+    if(e.key == "ArrowUp" && isGrounded) 
     {
         player.velocity.y += 5;
+        isGrounded = false;
     }
 }
 function keyLeftDown(e) 
