@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clipboard Messages</title>
+    
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <div class="main-title">
+      <h1>Clipboard Messages</h1>
+      <p>Press a button and get the text inside it</p>
+      <p>Press CTRL+V to paste the text whatever you want</p>
+    </div>
+    
+
+    <!-- Toggle MainMenu/Options -->
+    <div class="menu-buttons">
+      <button id="main-button" class="menu-button">Messages</button>
+      <button id="options-button" class="menu-button">Options</button>        
+    </div>
+    
+    <hr>
+    <!-- MainMenu -->
+    <div id="main-menu">
+
+      <h3>Copy messages:</h3>
+      <p id="copy-status">Waiting for Copy...</p>
+
+      <!-- Temp text -->
+      <div id="hideDiv" style="display:none">
+        <textarea id="temp" cols="30" rows="10"></textarea>
+      </div>
+
+
+      <!-- Buttons -->
+      <div class="message-buttons">
+        <button id="b1" class="message-button">Empty Slot</button>
+        <br>
+        <button id="b2" class="message-button">Empty Slot</button>
+        <br>
+        <button id="b3" class="message-button">Empty Slot</button>
+        <br>
+        <button id="b4" class="message-button">Empty Slot</button>
+        <br>
+        <button id="b5" class="message-button">Empty Slot</button>
+        <br>
+        <button id="b6" class="message-button">Empty Slot</button>
+        <br>
+        <button id="b7" class="message-button">Empty Slot</button>
+        <br>
+        <button id="b8" class="message-button">Empty Slot</button>
+        <br>
+        <button id="b9" class="message-button">Empty Slot</button>
+      </div>
+
+    </div>
+    
+    <!-- OptionsMenu -->
+    <div id="options-menu" style="display:none">
+
+      <h3>Edit messages:</h3>
+
+      <!-- Slots -->
+      <div>
+        <textarea id="slot1" cols="50" rows="2" placeholder="Empty"></textarea>
+        <textarea id="slot2" cols="50" rows="2" placeholder="Empty"></textarea>
+        <textarea id="slot3" cols="50" rows="2" placeholder="Empty"></textarea>
+        <textarea id="slot4" cols="50" rows="2" placeholder="Empty"></textarea>
+        <textarea id="slot5" cols="50" rows="2" placeholder="Empty"></textarea>
+        <textarea id="slot6" cols="50" rows="2" placeholder="Empty"></textarea>
+        <textarea id="slot7" cols="50" rows="2" placeholder="Empty"></textarea>
+        <textarea id="slot8" cols="50" rows="2" placeholder="Empty"></textarea>
+        <textarea id="slot9" cols="50" rows="2" placeholder="Empty"></textarea>
+      </div>
+      
+
+      <div>
+        <label for="cars">Select a theme:</label>
+        <select id="theme">
+          <option value="dark">ice</option>
+          <option value="dark">sepia</option>
+          <option value="dark">dark</option>
+        </select>
+      </div>
+      
+
+      <div class="save">
+        <button id="save">Save</button>
+        <p id="status"></p>
+      </div>
+
+      <p class="author">Made by Gabriel E. Fleck</p>
+      
+
+    </div>
+    
+    <script src="popup.js"></script>
+    <script src="options.js"></script>
+
+  </body>
+</html>
