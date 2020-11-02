@@ -1,5 +1,6 @@
 // Saves options to chrome.storage
 function save_options() {
+  let theme =  document.getElementById('theme').value;
   let slot1 =  document.getElementById('slot1').value;
   let slot2 =  document.getElementById('slot2').value;
   let slot3 =  document.getElementById('slot3').value;
@@ -10,6 +11,7 @@ function save_options() {
   let slot8 =  document.getElementById('slot8').value;
   let slot9 =  document.getElementById('slot9').value;
   chrome.storage.sync.set({
+    theme: theme,
     slot1: slot1,
     slot2: slot2,
     slot3: slot3,
@@ -21,7 +23,7 @@ function save_options() {
     slot9: slot9
   }, function() {
     // Update status to let user know options were saved.
-    var status = document.getElementById('save');
+    let status = document.getElementById('save');
     status.textContent = 'Saved.';
     setTimeout(function() {
       status.textContent = 'Save';
@@ -33,6 +35,7 @@ function save_options() {
 function restore_options() {
   //Default value empty
   chrome.storage.sync.get({
+    theme: 'icy',
     slot1: 'Empty',
     slot2: 'Empty',
     slot3: 'Empty',
@@ -43,6 +46,7 @@ function restore_options() {
     slot8: 'Empty',
     slot9: 'Empty',
   }, function(items) {
+    document.getElementById('theme').value = items.theme;
     document.getElementById('slot1').value = items.slot1;
     document.getElementById('slot2').value = items.slot2;
     document.getElementById('slot3').value = items.slot3;
@@ -53,7 +57,10 @@ function restore_options() {
     document.getElementById('slot8').value = items.slot8;
     document.getElementById('slot9').value = items.slot9;
   });
+
 }
+
+
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click',
     save_options);

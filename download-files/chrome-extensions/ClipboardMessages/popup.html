@@ -5,22 +5,22 @@
     
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body id="body">
 
     <div class="main-title">
       <h1>Clipboard Messages</h1>
       <p>Press a button and get the text inside it</p>
       <p>Press CTRL+V to paste the text whatever you want</p>
-    </div>
-    
 
-    <!-- Toggle MainMenu/Options -->
-    <div class="menu-buttons">
-      <button id="main-button" class="menu-button">Messages</button>
-      <button id="options-button" class="menu-button">Options</button>        
+      <!-- Toggle MainMenu/Options -->
+      <div class="menu-buttons">
+        <button id="main-button" class="menu-button">Messages</button>
+        <button id="options-button" class="menu-button">Options</button>        
+      </div>
+    
+      <hr>
     </div>
     
-    <hr>
     <!-- MainMenu -->
     <div id="main-menu">
 
@@ -76,10 +76,10 @@
       
 
       <div>
-        <label for="cars">Select a theme:</label>
+        <label for="theme">Select a theme:</label>
         <select id="theme">
-          <option value="dark">ice</option>
-          <option value="dark">sepia</option>
+          <option value="icy">icy</option>
+          <option value="sepia">sepia</option>
           <option value="dark">dark</option>
         </select>
       </div>

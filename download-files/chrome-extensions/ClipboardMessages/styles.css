@@ -10,16 +10,46 @@ body {
 
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+button {
+    border-radius: 0px;
+    border: 1px solid gray;
+    background-color: rgb(39, 39, 39);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+textarea {
+    resize: none;
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+select {
+    background-color: rgb(39, 39, 39);
+    color: white;
 }
 
 .main-title {
     text-align: center;
     margin: 0px;
     padding: 0px 0px;
-}
-
-textarea {
-    resize: none;
 }
 
 #main-menu {
@@ -53,7 +83,7 @@ textarea {
     
     margin: 3px;
     padding: 0px 0px;
-    width: 300px;
+    width: 380px;
     height: 25px;
     font-size: 12px;
 
