@@ -1,4 +1,4 @@
-//MADE BY GABRIEL EDUARDO FLECK - 2020 11 02
+//MADE BY GABRIEL EDUARDO FLECK - 2020 11 07
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function changeTheme() {
 
     if (document.getElementById('theme').value == "icy") {
-      document.getElementById('body').style.backgroundColor = "rgba(51, 153, 255, 1)";
+      document.getElementById('body').style.backgroundColor = "rgba(41, 122, 159, 1)";
     }
     if (document.getElementById('theme').value == "sepia") {
       document.getElementById('body').style.backgroundColor = "rgba(102, 51, 0, 1)";
