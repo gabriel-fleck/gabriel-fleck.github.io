@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
   let m7 = "";
   let m8 = "";
   let m9 = "";
+  let m10 = "";
+  let m11 = "";
+  let m12 = "";
 
   //LOAD SLOTS TO BUTTONS
   loadMessages();
@@ -54,6 +57,18 @@ document.addEventListener('DOMContentLoaded', function() {
     tempText = m9;
     copyText();
   }
+  function b10() {
+    tempText = m10;
+    copyText();
+  }
+  function b11() {
+    tempText = m11;
+    copyText();
+  }
+  function b12() {
+    tempText = m12;
+    copyText();
+  }
   
   document.querySelector("#b1").addEventListener("click", b1);
   document.querySelector("#b2").addEventListener("click", b2);
@@ -64,6 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector("#b7").addEventListener("click", b7);
   document.querySelector("#b8").addEventListener("click", b8);
   document.querySelector("#b9").addEventListener("click", b9);
+  document.querySelector("#b10").addEventListener("click", b10);
+  document.querySelector("#b11").addEventListener("click", b11);
+  document.querySelector("#b12").addEventListener("click", b12);
 
   //LOGIC FUNCTIONS
   function copyText() {
@@ -90,8 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function message() {
     let message = document.getElementById('copy-status');
     message.textContent = 'Copied!';
+    message.style.fontWeight = "bold";
+    //message.style.bold
     setTimeout(function() {
       message.textContent = 'Waiting for Copy...';
+      message.style.fontWeight = "normal";
     }, 750);
   }
 
@@ -119,6 +140,9 @@ document.addEventListener('DOMContentLoaded', function() {
       slot7: 'Empty',
       slot8: 'Empty',
       slot9: 'Empty',
+      slot10: 'Empty',
+      slot11: 'Empty',
+      slot12: 'Empty',
     }, function(items) {
       document.getElementById('theme').value = items.theme;
       document.getElementById('b1').innerHTML = items.slot1.slice(0, textLegth) + "...";
@@ -130,6 +154,9 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('b7').innerHTML = items.slot7.slice(0, textLegth) + "...";
       document.getElementById('b8').innerHTML = items.slot8.slice(0, textLegth) + "...";
       document.getElementById('b9').innerHTML = items.slot9.slice(0, textLegth) + "...";
+      document.getElementById('b10').innerHTML = items.slot10.slice(0, textLegth) + "...";
+      document.getElementById('b11').innerHTML = items.slot11.slice(0, textLegth) + "...";
+      document.getElementById('b12').innerHTML = items.slot12.slice(0, textLegth) + "...";
 
       m1 = items.slot1;
       m2 = items.slot2;
@@ -140,6 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
       m7 = items.slot7;
       m8 = items.slot8;
       m9 = items.slot9;
+      m10 = items.slot10;
+      m11 = items.slot11;
+      m12 = items.slot12;
       changeTheme();
     });
   }
