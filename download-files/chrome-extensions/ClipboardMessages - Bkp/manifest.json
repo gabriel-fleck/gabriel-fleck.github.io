@@ -3,7 +3,7 @@
 
   "name": "Clipboard Messages",
   "description": "Set messages to copy to clipboard",
-  "version": "1.0.3",
+  "version": "1.0.2",
 
   "browser_action": {
     "default_icon": "files/icon128.png",

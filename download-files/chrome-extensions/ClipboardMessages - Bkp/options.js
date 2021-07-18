@@ -13,19 +13,6 @@ function save_options() {
   let slot10 =  document.getElementById('slot10').value;
   let slot11 =  document.getElementById('slot11').value;
   let slot12 =  document.getElementById('slot12').value;
-  let slot13 =  document.getElementById('slot13').value;
-  let slot14 =  document.getElementById('slot14').value;
-  let slot15 =  document.getElementById('slot15').value;
-  let slot16 =  document.getElementById('slot16').value;
-  let slot17 =  document.getElementById('slot17').value;
-  let slot18 =  document.getElementById('slot18').value;
-  let slot19 =  document.getElementById('slot19').value;
-  let slot20 =  document.getElementById('slot20').value;
-  let slot21 =  document.getElementById('slot21').value;
-  let slot22 =  document.getElementById('slot22').value;
-  let slot23 =  document.getElementById('slot23').value;
-  let slot24 =  document.getElementById('slot24').value;
-  let slot25 =  document.getElementById('slot25').value;
   chrome.storage.sync.set({
     theme: theme,
     slot1: slot1,
@@ -39,20 +26,7 @@ function save_options() {
     slot9: slot9,
     slot10: slot10,
     slot11: slot11,
-    slot12: slot12,
-    slot13: slot13,
-    slot14: slot14,
-    slot15: slot15,
-    slot16: slot16,
-    slot17: slot17,
-    slot18: slot18,
-    slot19: slot19,
-    slot20: slot20,
-    slot21: slot21,
-    slot22: slot22,
-    slot23: slot23,
-    slot24: slot24,
-    slot25: slot25
+    slot12: slot12
   }, function() {
     // Update status to let user know options were saved.
     let status = document.getElementById('save');
@@ -80,19 +54,6 @@ function restore_options() {
     slot10: 'Empty',
     slot11: 'Empty',
     slot12: 'Empty',
-    slot13: 'Empty',
-    slot14: 'Empty',
-    slot15: 'Empty',
-    slot16: 'Empty',
-    slot17: 'Empty',
-    slot18: 'Empty',
-    slot19: 'Empty',
-    slot20: 'Empty',
-    slot21: 'Empty',
-    slot22: 'Empty',
-    slot23: 'Empty',
-    slot24: 'Empty',
-    slot25: 'Empty',
   }, function(items) {
     document.getElementById('theme').value = items.theme;
     document.getElementById('slot1').value = items.slot1;
@@ -107,19 +68,6 @@ function restore_options() {
     document.getElementById('slot10').value = items.slot10;
     document.getElementById('slot11').value = items.slot11;
     document.getElementById('slot12').value = items.slot12;
-    document.getElementById('slot13').value = items.slot13;
-    document.getElementById('slot14').value = items.slot14;
-    document.getElementById('slot15').value = items.slot15;
-    document.getElementById('slot16').value = items.slot16;
-    document.getElementById('slot17').value = items.slot17;
-    document.getElementById('slot18').value = items.slot18;
-    document.getElementById('slot19').value = items.slot19;
-    document.getElementById('slot20').value = items.slot20;
-    document.getElementById('slot21').value = items.slot21;
-    document.getElementById('slot22').value = items.slot22;
-    document.getElementById('slot23').value = items.slot23;
-    document.getElementById('slot24').value = items.slot24;
-    document.getElementById('slot25').value = items.slot25;
   });
 
 }

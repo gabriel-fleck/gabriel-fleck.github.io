@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
+		
 		<title>Hoje é sexta?</title>
 		
 
@@ -17,11 +19,9 @@
 			<h1>Hoje é sexta Feira ?</h1>
 
 			
-			<p id=isitfriday> test </p>
+			<p id=isitfriday> Não </p>
+			
 
-			
-			
-			
 			<hr>
 		
 		</div>
@@ -43,7 +43,7 @@
 		
 		-->
 
-		<script type="text/javascript">
+		<script>
 			function isitfriday() {
 				let day = new Date();
 				let friday = 'Não';
@@ -52,8 +52,11 @@
 				}
 
 			  	document.getElementById('isitfriday').innerHTML = friday;
+				
 			}
 			isitfriday();
+
+		
 			</script>
 		
 	</body>
